@@ -18,9 +18,9 @@ import React from "react";
 
 const page = () => {
 
-  const scrollToSection = (id) => {
-    
-  }
+  // const scrollToSection = (id) => {
+
+  // }
 
 
   return (

@@ -306,7 +306,7 @@ const page = () => {
                 </div>
               ) : (
                 <div className="flex items-center gap-4">
-                  <Image src={e?.companyLogo} alt="" width={24} height={24} />
+                  <Image src={e?.companyLogo as string} alt="" width={24} height={24} />
 
                   <div className="flex flex-col gap-1">
                     <span className={clsx(typoGraphy.text20, "font-bold")}>
