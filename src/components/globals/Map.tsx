@@ -5,8 +5,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { useTheme } from "next-themes";
 
 const Mapbox = () => {
-  const mapRef = useRef(null);
-  const mapContainerRef = useRef(null);
+  const mapRef = useRef<mapboxgl.Map | null>(null);
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const theme = useTheme();
 
   useEffect(() => {

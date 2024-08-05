@@ -1,7 +1,7 @@
 "use client"
 import { useAuth } from '@clerk/nextjs';
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 
 const Page = () => {
@@ -18,7 +18,7 @@ const Page = () => {
         router.replace("/landing");
       }
   
-    }, []);
+    }, [isSignedIn, location, router]);
 
   return null;
 }

@@ -58,8 +58,9 @@ const LineChartType: React.FC<BarChartProps> = ({
         />
 
         {Array.isArray(yDataKey) ? (
-          yDataKey?.map((e) => (
+          yDataKey?.map((e,index) => (
             <Line
+              key={index}
               dataKey={e}
               type={type}
               stroke={`var(--color-${e})`}

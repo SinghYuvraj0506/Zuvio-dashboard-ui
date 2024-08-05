@@ -21,7 +21,12 @@ import Mapbox from "@/components/globals/Map";
 const page = () => {
   return (
     <div className="flex flex-col gap-8 w-full">
-      <section className={clsx(containers.basicCont, "flex items-center justify-between")}>
+      <section
+        className={clsx(
+          containers.basicCont,
+          "flex items-center justify-between"
+        )}
+      >
         <div className="flex flex-col gap-12 w-1/2">
           <div className="flex items-center gap-4">
             <span className="p-3 dark:border-[#FFFFFF1A] border-[#0606061A] border rounded-full">
@@ -33,54 +38,54 @@ const page = () => {
           <div className="flex flex-col gap-6">
             {/* table head ----- */}
             <table className=" table-auto w-full">
-            <thead>
-              <tr
-                className={clsx(
-                  typoGraphy.text18,
-                  "font-normal text-left mb-10"
-                )}
-              >
-                <th className="pb-8 font-normal opacity-40">Country</th>
-                <th className="pb-8 font-normal opacity-40">Sales</th>
-                <th className="pb-8 font-normal opacity-40">Bounce</th>
-                <th className="pb-8 font-normal opacity-40">Value</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {CountrySales?.map((e) => (
-                <tr key={e.country} className="w-full">
-                  <td className="flex items-center gap-4 pb-2">
-                    <div className="relative w-9 h-9 rounded-full overflow-hidden">
-                      <Image
-                        src={e.countryFlag}
-                        alt=""
-                        fill
-                        className="object-cover object-center"
-                      />
-                    </div>
-
-                    <span className={clsx(typoGraphy.text20)}>{e.country}</span>
-                  </td>
-
-                  <td className={clsx(typoGraphy.text18, "pb-3")}>{e.sales}</td>
-
-                  <td className="pb-3">
-                  {e.bounce}
-                  </td>
-
-                  <td className="pb-3">
-                  {e.value}
-                  </td>
+              <thead>
+                <tr
+                  className={clsx(
+                    typoGraphy.text18,
+                    "font-normal text-left mb-10"
+                  )}
+                >
+                  <th className="pb-8 font-normal opacity-40">Country</th>
+                  <th className="pb-8 font-normal opacity-40">Sales</th>
+                  <th className="pb-8 font-normal opacity-40">Bounce</th>
+                  <th className="pb-8 font-normal opacity-40">Value</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody>
+                {CountrySales?.map((e) => (
+                  <tr key={e.country} className="w-full">
+                    <td className="flex items-center gap-4 pb-2">
+                      <div className="relative w-9 h-9 rounded-full overflow-hidden">
+                        <Image
+                          src={e.countryFlag}
+                          alt=""
+                          fill
+                          className="object-cover object-center"
+                        />
+                      </div>
+
+                      <span className={clsx(typoGraphy.text20)}>
+                        {e.country}
+                      </span>
+                    </td>
+
+                    <td className={clsx(typoGraphy.text18, "pb-3")}>
+                      {e.sales}
+                    </td>
+
+                    <td className="pb-3">{e.bounce}</td>
+
+                    <td className="pb-3">{e.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
         <div className="w-1/2 relative h-[80%]">
-        <Mapbox/>
+          <Mapbox />
         </div>
       </section>
 
@@ -117,7 +122,7 @@ const page = () => {
                   xDataKey={ChartsDataAnalytics.xDataLabel}
                   yDataKey={ChartsDataAnalytics.yDataLabel}
                 />
-              ) : e?.type === "Area" ? (
+              ) : (
                 <AreaChartType
                   chartConfig={{
                     views: {
@@ -129,7 +134,7 @@ const page = () => {
                   xDataKey={ChartsDataAnalytics.xDataLabel}
                   yDataKey={ChartsDataAnalytics.yDataLabel}
                 />
-              ) : null
+              )
             }
           />
         ))}
