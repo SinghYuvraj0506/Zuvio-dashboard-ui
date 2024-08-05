@@ -18,6 +18,7 @@ export const buttons = {
     buttonTransparent:"py-4 px-8 bg-transparent",
     buttonGrey:"py-4 px-8 bg-gray01 rounded-[36px]",
     buttonPurple:"py-3 px-6 bg-secondaryPurple rounded-[12px] text-white",
+    buttonDangerous:"py-3 px-6 bg-[#D80027] rounded-[12px] text-white",
     buttonWhite:"py-5 px-10 bg-white text-mainBlack rounded-[36px] shadow-[0px 2px 44px 0px rgba(255, 255, 255, 0.10)]",
     buttonWhiteSmall:"py-4 text-mainBlack px-8 bg-white rounded-[36px] shadow-[0px 2px 44px 0px rgba(255, 255, 255, 0.10)]",
     buttonWithBorderOnly:"border border-[#06060629] dark:border-[#FFFFFF33] py-4 px-8 rounded-[36px]",

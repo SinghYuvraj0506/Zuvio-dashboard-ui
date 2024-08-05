@@ -3,7 +3,7 @@
 import { SidebarOptions } from "@/lib/constants";
 import { typoGraphy } from "@/lib/cssConfig";
 import clsx from "clsx";
-import { Moon, Sun } from "lucide-react";
+import { ChartPie, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -69,6 +69,7 @@ const Index = () => {
                 key={e?.title}
                 {...e}
                 active= {pathname.includes(e?.link)}
+                icon={<e.icon />}
                 onClick={() => {
                   router.push(e?.link)
                 }}

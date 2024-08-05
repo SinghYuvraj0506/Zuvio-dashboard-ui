@@ -6,6 +6,7 @@ import { Bell, Search, Settings } from "lucide-react";
 import { typoGraphy } from "@/lib/cssConfig";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
 
 const DashboardNav = () => {
   const router  = useRouter()
@@ -32,13 +33,14 @@ const DashboardNav = () => {
         </section>
 
         <section className="flex items-center gap-5">
-          <Avatar>
+          {/* <Avatar>
             <AvatarImage
               className="object-cover"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ChrisEvans2023.jpg/640px-ChrisEvans2023.jpg"
             />
             <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          </Avatar> */}
+          <UserButton />
 
           <div className="flex flex-col gap-1">
             <span className={clsx(typoGraphy.text24)}>Miles Esther</span>

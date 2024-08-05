@@ -1,4 +1,4 @@
-import { buttons } from "./cssConfig";
+import { CarTaxiFront, ChartNoAxesCombined, ChartPie, House, Search } from "lucide-react";
 
 export const NavbarOptions = [
   {
@@ -314,10 +314,9 @@ export const FooterLinks = [
 ];
 
 export const SidebarOptions = [
-  { title: "Analytics", link: "/dashboard/analytics", icon: "" },
-  { title: "Discover", link: "/dashboard/discover", icon: "" },
-  { title: "Sales", link: "/dashboard/sales", icon: "" },
-  { title: "Automotive", link: "/dashboard/automotive", icon: "" },
-  { title: "Smart Home", link: "/dashboard/smart-home", icon: "" },
+  { title: "Analytics", link: "/dashboard/analytics", icon : ChartPie },
+  { title: "Discover", link: "/dashboard/discover", icon: Search },
+  { title: "Sales", link: "/dashboard/sales", icon: ChartNoAxesCombined },
+  { title: "Automotive", link: "/dashboard/automotive", icon: CarTaxiFront },
+  { title: "Smart Home", link: "/dashboard/smart-home", icon: House },
 ];
-

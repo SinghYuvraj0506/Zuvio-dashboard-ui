@@ -10,7 +10,16 @@ import clsx from "clsx";
 import { Building2, MapPin, Wind } from "lucide-react";
 import Image from "next/image";
 import { Switch } from "@/components/ui/switch";
-import { useState } from "react";
+import { ReactElement, ReactNode, useState } from "react";
+
+
+type GraphCardProps = {
+  icon?: ReactNode,
+  head:string,
+  subhead?:string,
+  GraphContent: ReactElement,
+  helperText?:string
+}
 
 export const SmallCards: React.FC<(typeof AnalyticsData2)[0] | any> = ({
   desc,
@@ -105,7 +114,9 @@ export const ToogleCard: React.FC<(typeof SmaetHomeData3)[0]> = ({
     <div
       className={clsx(
         "w-full rounded-[32px] px-6 py-4 relative overflow-hidden flex flex-col gap-8",
-        checked ? "bg-gradient-to-r from-secondaryPurple to-secondaryPurple  dark:bg-gradient-to-r dark:from-secondaryPurple dark:to-secondaryPurple text-white" : containers.basicCont
+        checked
+          ? "bg-gradient-to-r from-secondaryPurple to-secondaryPurple  dark:bg-gradient-to-r dark:from-secondaryPurple dark:to-secondaryPurple text-white"
+          : containers.basicCont
       )}
     >
       {!addMore ? (
@@ -132,11 +143,44 @@ export const ToogleCard: React.FC<(typeof SmaetHomeData3)[0]> = ({
         </>
       ) : (
         <section className="flex flex-col items-center justify-center w-full h-full gap-2 cursor-pointer">
-            <span className="w-10 h-10 flex items-center justify-center bg-lightgray03 dark:bg-gray02 text-2xl rounded-full">+</span>
+          <span className="w-10 h-10 flex items-center justify-center bg-lightgray03 dark:bg-gray02 text-2xl rounded-full">
+            +
+          </span>
 
-            <span className={clsx(typoGraphy.text18,"opacity-40")}>Add new device</span>
+          <span className={clsx(typoGraphy.text18, "opacity-40")}>
+            Add new device
+          </span>
         </section>
       )}
+    </div>
+  );
+};
+
+export const GraphCard:React.FC<GraphCardProps> = ({icon,head,GraphContent,subhead,helperText}) => {
+  return (
+    <div
+      className={clsx(
+        containers.basicCont,
+        "w-full rounded-[32px] p-6 flex flex-col gap-6"
+      )}
+    >
+      <div className="flex items-start gap-3">
+        {icon && <span className="p-2 rounded-full border border-lightgray02 dark:border-gray02">{icon}</span>}
+        <div className="flex flex-col gap-2">
+          <span className={clsx(typoGraphy.text20)}>{head}</span>
+          <p className={clsx(typoGraphy.text18,"opacity-40")}>{subhead}</p>
+        </div>
+      </div>
+
+
+      <section className="w-full">
+        {GraphContent}
+      </section>
+
+      <div>
+        <span className={clsx(typoGraphy.text16,"opacity-40")}>{helperText}</span>
+      </div>
+
     </div>
   );
 };
